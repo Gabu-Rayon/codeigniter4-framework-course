@@ -3,9 +3,11 @@
 namespace App\Controllers;
 
 
-class  ProductController extends BaseController{
-    
-    public function Products(){
-        return view("products/index");
+
+class ProductController extends BaseController{
+    public function index(){
+        // echo "Product";
+        return view("site/product");
     }
+    
 }

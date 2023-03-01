@@ -30,9 +30,19 @@ $routes->set404Override();
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
-
-
-$routes->get("products","ProductController::Products");
+$routes->get('products', 'ProductController::index');
+$routes->get('/students','StudentController::index');
+//Grouping Routes
+$routes->group('users', static function ($routes) {
+    $routes->get("profile", function (){
+        return "Iam user profile";
+    });
+    $routes->get("order",function (){
+        return "Iam user order";
+    });
+    // $routes->get('profile', 'ProductController::profile');
+    // $routes->get('order', 'ProductController::order');
+});
 /*
  * --------------------------------------------------------------------
  * Additional Routing
