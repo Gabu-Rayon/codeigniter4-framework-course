@@ -5,7 +5,9 @@
       <div class="row">
           <div class="col-md-12">
               <div class="card">
-                  <h5>Student Data</h5>
+                  <h5>Student Data
+                      <a href="<?= base_url('site/create'); ?>" class="btn btn-info btn-sm float-right">Add</a>
+                  </h5>
               </div>
 
               <div class="card-body">
@@ -36,7 +38,8 @@
                               <td><?= $row['course']; ?>
                               </td>
                               <td>
-                                  <a href="" class="text-decoration-none"><i class=" bi bi-trash">Delete</i></a>
+                                  <a href="#" class="btn  btn-primary bt-sm">Edit</i></a>
+                                  <a href="#" class="btn  btn-danger bt-sm">Delete</i></a>
                               </td>
                           </tr>
                           <?php endforeach;  ?>

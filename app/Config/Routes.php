@@ -31,7 +31,10 @@ $routes->set404Override();
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
 $routes->get('products', 'ProductController::index');
-$routes->get('/students','StudentController::index');
+$routes->get('/students','StudentController::fetchData');
+
+$routes->get('/create','StudentController::createData');
+$routes->get('site/create','StudentController::createData');
 //Grouping Routes
 $routes->group('users', static function ($routes) {
     $routes->get("profile", function (){
