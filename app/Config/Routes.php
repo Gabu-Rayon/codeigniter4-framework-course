@@ -35,6 +35,8 @@ $routes->get('/students','StudentController::fetchData');
 
 $routes->get('/create','StudentController::createData');
 $routes->get('site/create','StudentController::createData');
+$routes->post('site/post','StudentController::postData');
+
 //Grouping Routes
 $routes->group('users', static function ($routes) {
     $routes->get("profile", function (){

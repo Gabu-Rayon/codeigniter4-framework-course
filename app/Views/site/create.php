@@ -10,14 +10,14 @@
                       </h5>
                   </div>
                   <div class="card-body">
-                      <form action="<?= base_url('site/add') ?>" method="POST">
+                      <form action="<?= base_url('site/post') ?>" method="POST">
                           <div class="form-group mb-2">
                               <label class="form-label" for="name">name</label>
                               <input type="text" id="name" name="name" class="form-control" placeholder="name" required>
                           </div>
                           <div class="form-group mb-2">
                               <label class="form-label" for="phone">Contact</label>
-                              <input type="text" id="phone" name="hpone" class="form-control" placeholder="+254 ..."
+                              <input type="text" id="phone" name="phone" class="form-control" placeholder="+254 ..."
                                   required>
                           </div>
                           <!-- Email input -->
@@ -34,7 +34,7 @@
                                   required>
                           </div>
                           <div class="form-group ">
-                              <button type="submit" name="add" class="btn btn-primary btn-block mb-2">Submit
+                              <button type="submit" name="save" class="btn btn-primary btn-block mb-2">Submit
                                   Data</button>
                           </div>
                       </form>
