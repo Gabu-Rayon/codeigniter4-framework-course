@@ -24,5 +24,21 @@ class StudentController extends BaseController{
         $data['students'] = $student->findAll();
         return view("site/students",$data);
     }
+    public function editData($id = null){
+        $student = new StudentModel();
+        $data['student'] = $student->find($id);
+        return view("site/edit",$data);
+    }
+    public function updateData($id = null){
+         $student = new StudentModel();
+        $data = [
+            'name' => $this->request->getPost('name'),
+            'email' => $this->request->getPost('email'),
+            'phone' => $this->request->getPost('phone'),
+            'course' => $this->request->getPost('course')
+        ];
+        $student->update($id, $data);
+        return redirect()->to(base_url('students'))->with('status','Student Updated Successfully');
+        }
    
 }

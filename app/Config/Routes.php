@@ -37,6 +37,12 @@ $routes->get('/create','StudentController::createData');
 $routes->get('site/create','StudentController::createData');
 $routes->post('site/post','StudentController::postData');
 
+$routes->get('site/edit/(:num)','StudentController::editData/$1');
+$routes->put('site/update/(:num)', 'StudentController::updateData/$1');
+
+$routes->get('site/delete/(:num)','StudentController::deleteData/$1');
+$routes->delete('site/delete/(:num)', 'StudentController::delete/$1');
+
 //Grouping Routes
 $routes->group('users', static function ($routes) {
     $routes->get("profile", function (){

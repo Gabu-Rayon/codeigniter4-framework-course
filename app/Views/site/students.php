@@ -49,8 +49,11 @@
                               <td><?= $row['course']; ?>
                               </td>
                               <td>
-                                  <a href="#" class="btn  btn-primary bt-sm">Edit</i></a>
-                                  <a href="#" class="btn  btn-danger bt-sm">Delete</i></a>
+                                  <a href="<?=base_url('site/edit/'.$row['id']); ?>"
+                                      class="btn  btn-primary bt-sm">Edit</i></a>
+
+                                  <a href="<?=base_url('site/delete/'.$row['id']); ?>"
+                                      class="btn  btn-danger bt-sm">Delete</i></a>
                               </td>
                           </tr>
                           <?php endforeach;  ?>
