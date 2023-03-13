@@ -40,5 +40,23 @@ class StudentController extends BaseController{
         $student->update($id, $data);
         return redirect()->to(base_url('students'))->with('status','Student Updated Successfully');
         }
-   
+        
+        public function deleteData($id = null){
+            $student = new StudentModel();
+            $student->delete($id);           
+            return redirect()->back()->with('status','Student Data Deleted');
+        }
+
+        
+         public function delete($id = null){
+            $student = new StudentModel();
+            $student->delete($id); 
+            return redirect()->back()->with('status','Student Data Deleted');
+        }
+
+            public function confirmDelete($id = null){
+            $student = new StudentModel();
+            $student->delete($id); 
+            return ;
+        }
 }

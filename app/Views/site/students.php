@@ -31,6 +31,8 @@
                               <th>Phone</th>
                               <th>Course</th>
                               <th>Action</th>
+                              <th>Del-Method</th>
+                              <th>Confirm-Del</th>
                           </tr>
                       </thead>
                       <tbody>
@@ -55,6 +57,17 @@
                                   <a href="<?=base_url('site/delete/'.$row['id']); ?>"
                                       class="btn  btn-danger bt-sm">Delete</i></a>
                               </td>
+                              <td>
+                                  <form action="<?=base_url('site/delete-method/'.$row['id']); ?>" method="POST">
+                                      <input type="hidden" name="_method" value="DELETE">
+                                      <button type="submit" class="btn  btn-danger bt-sm">DELETE</button>
+                                  </form>
+                              </td>
+
+                              <td>
+                                  <button type="button" value="<?= $row['id'] ;?>"
+                                      class="confirm_del_btn btn  btn-danger bt-sm">DELETE</button>
+                              </td>
                           </tr>
                           <?php endforeach;  ?>
                           <?php endif;  ?>
@@ -63,4 +76,25 @@
               </div>
           </div>
       </div>
+      <?= $this->endSection() ?>
+
+      <?= $this->section('scripts') ?>
+      <script>
+      $(document).ready(function() {
+          $('.confirm_del_btn').click(function(e) {
+              e.preventDefault();
+              var id = $(this).val();
+              if (confirm("Are you sure you want to Delete this !")) {
+                  //alert(id);
+                  $.ajax({
+                      url: "site/confirm-delete/" + id,
+                      success: function(response) {
+                          window.location.reload();
+                          alert('Student Data deleted successfully');
+                      }
+                  });
+              }
+          });
+      });
+      </script>
       <?= $this->endSection() ?>

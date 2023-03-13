@@ -41,7 +41,10 @@ $routes->get('site/edit/(:num)','StudentController::editData/$1');
 $routes->put('site/update/(:num)', 'StudentController::updateData/$1');
 
 $routes->get('site/delete/(:num)','StudentController::deleteData/$1');
-$routes->delete('site/delete/(:num)', 'StudentController::delete/$1');
+$routes->delete('site/delete-method/(:num)', 'StudentController::delete/$1');
+
+
+$routes->get('site/confirm-delete/(:num)','StudentController::confirmDelete/$1');
 
 //Grouping Routes
 $routes->group('users', static function ($routes) {
