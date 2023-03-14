@@ -1,14 +1,5 @@
-<!doctype html>
-<html lang="en">
+  <?= $this->extend('layouts/sitelayout') ?>
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Product Page</title>
-</head>
+  <?= $this->section('content') ?>
 
-<body>
-    <h1>Product</h1>
-</body>
-
-</html>
+  <?= $this->endSection() ?>
