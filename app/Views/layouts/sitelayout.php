@@ -23,14 +23,23 @@
     <script src="<?= base_url('assets/js/bootstrap.min.js'); ?>"></script>
     <!-- JavaScript  AlertifyJS-->
     <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+    <!-- <script>
+    $(document).ready(function() {
+        <?php //if (session()->getFlashdata('status')) {  ?>
+
+        alertify.set('notifier', 'position', 'top-right');
+        alertify.success("<? //= session()->getFlashdata('status'); ?>");
+
+        <?php //}  ?>
+    });
+    </script> -->
+
+    <script src="<?= base_url('assets/js/sweetalert.min.js'); ?>"></script>
     <script>
     $(document).ready(function() {
         <?php if (session()->getFlashdata('status')) {  ?>
 
-        alertify.set('notifier', 'position', 'top-right');
-        alertify.success("<?= session()->getFlashdata('status'); ?>");
-
-        <?php }  ?>
+        <?php  }  ?>
     });
     </script>
     <?= $this->renderSection('scripts') ?>
