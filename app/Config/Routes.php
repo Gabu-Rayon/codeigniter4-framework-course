@@ -30,20 +30,21 @@ $routes->set404Override();
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
-$routes->get('products', 'ProductController::index');
-$routes->get('/students','StudentController::fetchData');
 
+$routes->get('/products', 'ProductController::productData');
+$routes->get('/add-product', 'ProductController::addProduct');
+///Post product data to DB
+$routes->post('/product-store', 'ProductController::productPost');
+
+
+$routes->get('/students','StudentController::fetchData');
 $routes->get('/create','StudentController::createData');
 $routes->get('site/create','StudentController::createData');
 $routes->post('site/post','StudentController::postData');
-
 $routes->get('site/edit/(:num)','StudentController::editData/$1');
 $routes->put('site/update/(:num)', 'StudentController::updateData/$1');
-
 $routes->get('site/delete/(:num)','StudentController::deleteData/$1');
 $routes->delete('site/delete-method/(:num)', 'StudentController::delete/$1');
-
-
 $routes->get('site/confirm-delete/(:num)','StudentController::confirmDelete/$1');
 
 //Grouping Routes

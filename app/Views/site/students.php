@@ -17,11 +17,11 @@
               ?>
               <div class="card">
                   <h5>Student Data
-                      <a href="<?= base_url('site/create'); ?>" class="btn btn-info btn-sm float-right">Add</a>
+                      <a href="<?= base_url('site/create'); ?>" class="btn btn-info btn-sm float-right m-2">Add</a>
                   </h5>
               </div>
 
-              <div class="card-body">
+              <div class="card-body m-5">
                   <table class="table table-bordered" id="mydatatable">
                       <thead>
                           <tr>

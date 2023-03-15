@@ -6,10 +6,10 @@
               <div class="card">
                   <div class="card-header">
                       <h5>Add Student Data
-                          <a href="<?= base_url('students'); ?>" class="btn btn-info btn-sm float-right">Back</a>
+                          <a href="<?= base_url('students'); ?>" class="btn btn-info btn-sm float-right m-2">Back</a>
                       </h5>
                   </div>
-                  <div class="card-body">
+                  <div class="card-body m-5">
                       <form action="<?= base_url('site/post') ?>" method="POST">
                           <div class="form-group mb-2">
                               <label class="form-label" for="name">name</label>
