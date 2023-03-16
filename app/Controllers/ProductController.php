@@ -6,11 +6,7 @@ use App\Models\ProductModel;
 
 class ProductController extends BaseController
 {
-    public function productData()
-    {
-        // echo "Product";
-        return view("product/products");
-    }
+    
     public function addProduct()
     {
         // echo "Product";
@@ -23,7 +19,7 @@ class ProductController extends BaseController
 
         if ($file->isValid() && ! $file->hasMoved()) {
             $imageName = $file->getRandomName();
-            $file->move(WRITEPATH . 'uploads/', $imageName);
+            $file->move('uploads/', $imageName);
         }
         $data = [
         'name' => $this->request->getPost('name'),
@@ -33,5 +29,11 @@ class ProductController extends BaseController
         ];
         $product->save($data);
          return  redirect()->to('products')->with('status','Product Data  & images saved !');
+    } 
+    public function fetchProducts()
+    {
+        $product = new ProductModel();
+        $data['products'] = $product->findAll();
+        return view("products", $data);
     }
 }

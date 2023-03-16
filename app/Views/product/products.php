@@ -35,8 +35,43 @@
                               <th>Confirm-Del</th>
                           </tr>
                       </thead>
-                      <tbody>
 
+                      <tbody>
+                          <?php  if ($products): ?>
+                          <?php  foreach ($products as $row) : ?>
+                          <tr>
+                              <td><?= $row['id']; ?>
+                              </td>
+                              <td><?= $row['name']; ?>
+                              </td>
+                              <td>
+                                  <?= $row['desscription']; ?>
+                              </td>
+                              <td><?= $row['price']; ?>
+                              </td>
+                              <td><?= $row['image']; ?>
+                              </td>
+                              <td>
+                                  <a href="<?=base_url('site/edit/'.$row['id']); ?>"
+                                      class="btn  btn-primary bt-sm">Edit</i></a>
+
+                                  <a href="<?=base_url('site/delete/'.$row['id']); ?>"
+                                      class="btn  btn-danger bt-sm">Delete</i></a>
+                              </td>
+                              <td>
+                                  <form action="<?=base_url('site/delete-method/'.$row['id']); ?>" method="POST">
+                                      <input type="hidden" name="_method" value="DELETE">
+                                      <button type="submit" class="btn  btn-danger bt-sm">DELETE</button>
+                                  </form>
+                              </td>
+
+                              <td>
+                                  <button type="button" value="<?= $row['id'] ;?>"
+                                      class="confirm_del_btn btn  btn-danger bt-sm">DELETE</button>
+                              </td>
+                          </tr>
+                          <?php endforeach;  ?>
+                          <?php endif;  ?>
                       </tbody>
                       <table>
               </div>

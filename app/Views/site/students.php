@@ -33,8 +33,6 @@
                               <th>Action</th>
                               <th>Del-Method</th>
                               <th>Confirm-Del</th>
-                          </tr>
-                      </thead>
                       <tbody>
                           <?php  if ($students): ?>
                           <?php  foreach ($students as $row) : ?>
@@ -72,6 +70,8 @@
                           <?php endforeach;  ?>
                           <?php endif;  ?>
                       </tbody>
+                      </tr>
+                      </thead>
                       <table>
               </div>
           </div>
