@@ -29,7 +29,7 @@ class StudentController extends BaseController
         return view("site/students", $data);
     }
     public function editData($id = null)
-    {
+    { 
         $student = new StudentModel();
         $data['student'] = $student->find($id);
         return view("site/edit", $data);
@@ -74,7 +74,6 @@ class StudentController extends BaseController
             'status_text'=> 'You Student Data has been deleted successfully',
             'status_icon'=> 'success'
         ];
-        return $this->response->setJSON($data);
-        
+        return $this->response->setJSON($data);        
     }
 }

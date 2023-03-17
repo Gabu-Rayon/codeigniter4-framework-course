@@ -6,7 +6,9 @@ use App\Models\ProductModel;
 
 class ProductController extends BaseController
 {
-    
+    // public function viewProducts(){
+    //     return view("product/products");
+    // }
     public function addProduct()
     {
         // echo "Product";
@@ -34,6 +36,29 @@ class ProductController extends BaseController
     {
         $product = new ProductModel();
         $data['products'] = $product->findAll();
-        return view("products", $data);
+        return view("product/products", $data);
+    } 
+      public function deleteProduct($id = null)
+    {
+        $product= new ProductModel();
+        $product->delete($id);
+        return redirect()->back()->with('status', 'Product Data Deleted');
+    }
+     public function deleteMeth($id = null)
+    {
+        $product = new ProductModel();
+        $product->delete($id);
+        return redirect()->back()->with('status','Product Data Deleted');
+    }
+     public function confirmDel($id = null)
+    {
+        $product = new ProductModel();
+        $product->delete($id);
+        $data = [
+            'status'=> 'Deleted Successfully',
+            'status_text'=> 'You Product Data has been deleted successfully',
+            'status_icon'=> 'success'
+        ];
+        return $this->response->setJSON($data);        
     }
 }
