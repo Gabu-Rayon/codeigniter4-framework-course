@@ -1,7 +1,7 @@
   <?= $this->extend('layouts/sitelayout') ?>
   <?= $this->section('content') ?>
   <div class="container mt-4">
-      <div class="row jistify-content-center">
+      <div class="row justify-content-center">
           <div class="col-md-6">
               <div class="card">
                   <div class="card-header">
