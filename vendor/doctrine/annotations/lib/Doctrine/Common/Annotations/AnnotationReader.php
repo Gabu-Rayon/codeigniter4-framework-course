@@ -15,7 +15,7 @@ use function extension_loaded;
 use function ini_get;
 
 /**
- * A reader for docblock annotations.
+ * A reader for docblocks annotations.
  */
 class AnnotationReader implements Reader
 {
